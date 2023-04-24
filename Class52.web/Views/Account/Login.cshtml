@@ -1,0 +1,22 @@
+﻿@if (TempData["invalid"] != null)
+{
+    <div class="col-md-12">
+        <div class="alert alert-danger alert-dismissible fade show"style="text-align: center" role="alert">
+            @TempData["invalid"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+}
+
+<div class="col-md-6 offset-md-3 bg-light p-4 rounded shadow">
+    <h1 style="color: dodgerblue; font-family: KBbubblegum">Log In!</h1>
+    <form method="post" action="/account/Login" style="text-align:center">
+        <input name="email" id="email" class="form-control" placeholder="Email Address" />
+        <br />
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" />
+        <button class="btn btn-success" style="font-family: KBbubblegum">Login</button>
+    </form>
+    <br />
+
+    <a href="/account/newuser">Don't have an account yet? Create one now!</a>
+</div>

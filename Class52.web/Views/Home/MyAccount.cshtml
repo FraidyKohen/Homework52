@@ -1,0 +1,25 @@
+﻿@using Class52.data
+@model IndexViewModel
+
+<div class="text-center">
+    <h1 class="display-4">The following are your posts:</h1>
+</div>
+
+<div>
+    @foreach (Ad a in Model.Ads)
+    {
+        <div class="col-md-6 offset-md-3 bg-light p-4 rounded shadow">
+            <p class="text-lg-center">Listed by @a.Name</p>
+            <p class="text-md-center">Listed on @a.DateCreated.ToLongDateString()</p>
+            <p class="text-info text-md-center">@a.Description</p>
+            <p class="text-md-center">For more information, call @a.PhoneNumber</p>
+
+            <form method="post" action="/home/delete">
+                <input type="hidden" name="previousPage" value="/home/myAccount" />
+                <input type="hidden" name="adId" value="@a.AdId" />
+                <button class="btn btn-danger text-md-center">Delete</button>
+            </form>
+        </div>
+        <br />
+    }
+</div>

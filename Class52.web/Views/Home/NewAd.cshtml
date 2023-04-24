@@ -1,0 +1,31 @@
+﻿@model NewAdViewModel
+
+<h1>Welcome, @Model.CurrentUser.Name!</h1>
+
+<div class="box-shadow">
+    <div class="col-md-6 offset-md-3 bg-light p-4 rounded shadow">
+        <form method="post" action="/home/newAd">
+            <input type="hidden" name="userId" value="@Model.CurrentUser.UserId"/>
+            <input type="hidden" name="name" value="@Model.CurrentUser.Name" />
+            <div class="row align-content-center">
+                <div class="col-md-8 offset-md-2">
+                    <input type="text" class="form-control" value="@Model.CurrentUser.PhoneNumber" name="phoneNumber" size="50" style="text-align: center" id="phone-number"/>
+                    <label for="phoneNumber">
+                        <i>
+                            Phone number for this ad
+                        </i>
+                    </label>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <textarea name="description" class="form-control w-100" rows="8" placeholder="Description" size="80" style="justify-content: center" id="description"></textarea>
+            </div>
+            <button disabled class="btn btn-success w-100" id="submit-button">Submit</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/newad.js"></script>
+                        }

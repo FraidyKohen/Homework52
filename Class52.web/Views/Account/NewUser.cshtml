@@ -1,0 +1,19 @@
+﻿<div class="col-md-6 offset-md-3 bg-light p-4 rounded shadow">
+    <h1 style="color: dodgerblue; font-family: KBbubblegum">Sign Up!</h1>
+    <form method="post" action="/account/newUser" style="text-align:center">
+        <input name="name" id="name" class="form-control" placeholder="Name" />
+        <br />
+        <input name="email" id="email" class="form-control" placeholder="Email Address" />
+        <br />
+        <input type="tel" name="phoneNumber" id="phone-number" class="form-control" placeholder="Phone Number" />
+        <br />
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" />
+        <p class="text-body">Password must be at least 8 characters</p>
+        <button disabled class="btn btn-success" style="font-family: KBbubblegum" id="submit-button">Sign Up</button>
+    </form>
+</div>
+
+@section Scripts 
+{
+    <script src="~/js/newuser.js"></script>
+}
